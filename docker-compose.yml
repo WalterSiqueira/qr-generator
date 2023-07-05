@@ -1,0 +1,10 @@
+services:
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    container_name: flask
+    ports:
+      - 5000:5000
+    volumes:
+      - ./src:/app

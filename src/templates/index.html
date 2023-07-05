@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL to QR Converter</title>
+    <link rel="icon" href="{{ url_for('static', filename='qr-code-scan.png')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            border: solid purple 2px;
+            box-shadow: 2px 4px 4px 2px;
+        }
+        form {
+            margin: 0 0 3px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="mb-3">Convert your URL into QR</h2>
+        </div>
+        <form action="/convert" method="post">
+            <div class="form-group">
+                <label for="urlInput">URL</label>
+                <input type="text" class="form-control" id="urlInput" placeholder="Enter URL" name="url">
+            </div>
+            <button type="submit" class="btn btn-primary">Generate QR</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
